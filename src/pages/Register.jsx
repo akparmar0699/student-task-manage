@@ -21,7 +21,7 @@ const Register = () => {
     if(!formData.name.trim()){
       newErrors.name = "Full Name is required."
     }
-    else if(formData.name.trim().length < 3){
+    else if(formData.name.trim().length <= 3){
       newErrors.name = "Minimum 3 characters required."
     }
 
@@ -35,7 +35,7 @@ const Register = () => {
    if(!formData.phone.trim()){
       newErrors.phone = "Phone number is required."
     }
-   else if (!/^\d{10}$/.test(formData.phone)) {
+   else if (!/^[0-9]{10}$/.test(formData.phone)) {
       newErrors.phone = "Invalid phone number format."
   }
     if(!formData.password.trim()){
@@ -47,7 +47,7 @@ const Register = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
 
-  };
+  }
 
   const handleInputChange = (e) => {
     //console.log(e.target.name,e.target.value);
@@ -58,16 +58,16 @@ const Register = () => {
     });
     setErrors({
       ...errors,
-      [e.target.name]: "",
+      [e.target.name]: ""
     })
   };
 
   const handleSubmit = (e) =>{
     e.preventDefault();
     if(validate()){
-      localStorage.setItem("authData", JSON.stringify(formData));
-      alert('Registration successful!');
-      navigate("/Login");
+      localStorage.setItem("authData",JSON.stringify(formData))
+      alert('Registration successful!...')
+      navigate("/login");
     }
   }
 
