@@ -1,12 +1,36 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "title": "Welcome Task",
-            "description": "This is your task served from json-server.",
-            "dueDate": "2025-09-31",
-            "completed": false,
-            "priority": "Medium"
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Welcome Task",
+      "description": "This is your task served from json-server.",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "Medium"
+    },
+    {
+      "id": "2",
+      "title": "Welcome Task",
+      "description": "This is your task served from json-server.",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "Medium"
+    },
+    {
+      "id": "3",
+      "title": "Welcome Task",
+      "description": "This is your task served from json-server.",
+      "dueDate": "2025-09-31",
+      "completed": false,
+      "priority": "high"
+    },
+    {
+      "id": "5cb0",
+      "title": "Anil",
+      "description": "Kbash",
+      "dueDate": "2026-02-05",
+      "priority": "Low",
+      "completed": false
+    }
+  ]
 }

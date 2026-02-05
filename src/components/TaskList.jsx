@@ -1,43 +1,48 @@
 import React from "react";
 
-const TaskList = () => {
+const TaskList = ({ tasks}) => {
   return (
     <div className="task-grid">
-      {/* Task Card1*/}
-      <div className="task-card" style={{ position: "relative" }}>
-        <h3>Complete React Assignment</h3>
-        <p>Finish task manager UI and styling</p>
+      {tasks.map((task)=>(
 
-        <div className="task-meta">
-          <span>Due: 2026-02-10</span>
-          <span className="proiority-badge  priority-high">High</span>
-        </div>
 
-        <div className="task-action">
-          <button
-            className='btn-icon' style={{ background: "#00d2ff" }}
-            title='Edit Task'
+        <div className="task-card" style={{ position: "relative" }}>
+          <h3>{task.title}</h3>
+          <p>{task.description}</p>
+
+          <div className="task-meta">
+            <span>Due:{task.dueDate}</span>
+            <span className="priority-badge priority-high">{task.priority}</span>
+          </div>
+
+          <div className="task-action">
+            <button
+              className="btn-icon"
+              style={{ background: "#00d2ff" }}
+              title="Edit task"
             >
               ✏️
-          </button>
+            </button>
 
-
-          <button
-            className="btn-icon" style={{ background: "#29c96f" }}
-            title="Mark Complete"
+            <button
+              className="btn-icon"
+              style={{ background: "#00b894" }}
+              title="Mark complete"
             >
-              ✅
-        </button>
+              ✔️
+            </button>
 
-          <button
-            className="btn-icon"
-            style={{ background: "#ff416c" }}
-            title="Delete Task"
-          >
-            🗑️
-          </button>
+            <button
+              className="btn-icon"
+              style={{ background: "#ff416c" }}
+              title="Delete task"
+            >
+              🗑️
+            </button>
+          </div>
         </div>
-      </div>
+               ))}
+
     </div>
   );
 };
